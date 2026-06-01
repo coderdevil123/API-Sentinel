@@ -1,5 +1,9 @@
 import { Router } from "express";
 
+import adminRoutes from "./admin.routes";
+import userRoutes from "./user.routes";
+import productRoutes from "./product.routes";
+
 const router = Router();
 
 router.get("/health", (_, res) => {
@@ -10,5 +14,9 @@ router.get("/health", (_, res) => {
     status: "healthy",
   });
 });
+
+router.use("/users", userRoutes);
+router.use("/products", productRoutes);
+router.use("/admin", adminRoutes);
 
 export default router;

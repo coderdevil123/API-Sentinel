@@ -7,7 +7,8 @@ CREATE TABLE users (
     name TEXT NOT NULL,
     email TEXT NOT NULL,
     password_hash TEXT NOT NULL,
-    role TEXT NOT NULL
+    role TEXT NOT NULL,
+    internal_notes TEXT
 );
 
 CREATE TABLE products (
@@ -22,11 +23,29 @@ CREATE TABLE audit_logs (
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT INTO users (name,email,password_hash,role)
+INSERT INTO users (name,email,password_hash,role,internal_notes)
 VALUES
-('John Doe','john@test.com','hash123','user'),
-('Alice Smith','alice@test.com','hash456','user'),
-('Admin User','admin@test.com','adminhash','admin');
+(
+'John Doe',
+'john@test.com',
+'hash123',
+'user',
+'VIP Customer'
+),
+(
+'Alice Smith',
+'alice@test.com',
+'hash456',
+'user',
+'Pending KYC'
+),
+(
+'Admin User',
+'admin@test.com',
+'adminhash',
+'admin',
+'Root Administrator'
+);
 
 INSERT INTO products (name,price)
 VALUES

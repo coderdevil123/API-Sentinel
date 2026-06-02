@@ -22,4 +22,31 @@ export class UserService {
       [id]
     );
   }
+
+  async createUser(userData: any) {
+    const db = await getDatabase();
+
+    const result = await db.run(
+      `
+      INSERT INTO users
+      (
+        name,
+        email,
+        password_hash,
+        role,
+        internal_notes
+      )
+      VALUES (?, ?, ?, ?, ?)
+      `,
+      [
+        userData.name,
+        userData.email,
+        "default_hash",
+        userData.role,
+        "Created via API"
+      ]
+    );
+
+    return result;
+  }
 }

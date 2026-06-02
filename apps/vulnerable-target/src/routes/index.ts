@@ -3,6 +3,7 @@ import { Router } from "express";
 import adminRoutes from "./admin.routes";
 import userRoutes from "./user.routes";
 import productRoutes from "./product.routes";
+import authRoutes from "./auth.routes";
 
 const router = Router();
 
@@ -18,5 +19,6 @@ router.get("/health", (_, res) => {
 router.use("/users", userRoutes);
 router.use("/products", productRoutes);
 router.use("/admin", adminRoutes);
+router.use("/auth", authRoutes);
 
 export default router;

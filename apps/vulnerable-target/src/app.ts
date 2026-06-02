@@ -2,12 +2,14 @@ import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
+import { setupSwagger } from "./config/swagger";
 
 import routes from "./routes";
 import { loggerMiddleware } from "./middleware/logger.middleware";
 import { errorMiddleware } from "./middleware/error.middleware";
 
 const app = express();
+setupSwagger(app);
 
 app.use(helmet());
 app.use(cors());

@@ -35,4 +35,20 @@ export class UserController {
       data: user,
     });
   }
+  async createUser(req: Request, res: Response) {
+    const body = req.body;
+
+    console.log(
+      "[VULNERABILITY] Mass Assignment endpoint accessed"
+    );
+
+    const result = await userService.createUser(body);
+
+    res.status(201).json({
+      success: true,
+      message: "User created",
+      id: result.lastID,
+      suppliedRole: body.role
+    });
+  }
 }

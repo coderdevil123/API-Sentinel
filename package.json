@@ -1,24 +1,22 @@
 {
   "name": "api-sentinel",
   "version": "1.0.0",
-  "description": "> Enterprise-Grade Automated API Security & Vulnerability Scanner",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
+  "private": true,
+  "description": "Enterprise-Grade Automated API Security & Vulnerability Scanner",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/coderdevil123/API-Sentinel.git"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Shubhang Mishra",
   "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/coderdevil123/API-Sentinel/issues"
-  },
   "homepage": "https://github.com/coderdevil123/API-Sentinel#readme"
 }

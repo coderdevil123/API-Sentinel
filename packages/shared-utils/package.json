@@ -1,0 +1,21 @@
+{
+  "name": "@api-sentinel/shared-utils",
+  "version": "1.0.0",
+  "description": "Shared utility functions for API-Sentinel",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "api-sentinel",
+    "utilities",
+    "helpers"
+  ],
+  "author": "Shubhang Mishra",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  }
+}

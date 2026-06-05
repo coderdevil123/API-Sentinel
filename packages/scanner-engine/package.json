@@ -1,0 +1,22 @@
+{
+  "name": "@api-sentinel/scanner-engine",
+  "version": "1.0.0",
+  "description": "API vulnerability detection engine",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "scan": "ts-node src/run-scan.ts"
+  },
+  "dependencies": {
+    "@api-sentinel/discovery-engine": "^1.0.0",
+    "@api-sentinel/shared-types": "*",
+    "@api-sentinel/shared-utils": "*",
+    "axios": "^1.12.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  }
+}

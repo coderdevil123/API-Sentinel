@@ -1,0 +1,23 @@
+{
+  "name": "@api-sentinel/discovery-engine",
+  "version": "1.0.0",
+  "description": "API discovery and endpoint enumeration engine",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "discover": "ts-node src/run-discovery.ts"
+  },
+  "author": "Shubhang Mishra",
+  "license": "ISC",
+  "dependencies": {
+    "@api-sentinel/shared-types": "*",
+    "@api-sentinel/shared-utils": "*",
+    "axios": "^1.12.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  }
+}

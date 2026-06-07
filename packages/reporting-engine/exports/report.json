@@ -1,0 +1,5 @@
+{
+  "title": "Executive Security Report",
+  "generatedAt": "2026-06-07T19:18:46.445Z",
+  "content": "\n====================================\n API-SENTINEL EXECUTIVE REPORT\n====================================\n\nTarget:\nhttp://localhost:5001\n\nRisk Score:\n100\n\nOverall Risk:\nCRITICAL\n\nBusiness Impact:\nPotential data leakage\n\nExecutive Summary:\nImmediate remediation required\n\nGenerated:\n2026-06-07T19:18:46.442Z\n"
+}

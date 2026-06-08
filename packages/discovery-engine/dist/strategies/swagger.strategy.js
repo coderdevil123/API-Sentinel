@@ -8,11 +8,10 @@ const axios_1 = __importDefault(require("axios"));
 const shared_utils_1 = require("@api-sentinel/shared-utils");
 class SwaggerStrategy {
     candidates = [
-        "/docs",
-        "/swagger",
-        "/swagger.json",
         "/openapi.json",
-        "/api-docs"
+        "/swagger.json",
+        "/api-docs",
+        "/docs"
     ];
     async discover(targetUrl) {
         for (const path of this.candidates) {

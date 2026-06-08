@@ -1,0 +1,21 @@
+{
+  "name": "@api-sentinel/control-plane",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@api-sentinel/discovery-engine": "*",
+    "@api-sentinel/reporting-engine": "*",
+    "@api-sentinel/risk-engine": "*",
+    "@api-sentinel/scanner-engine": "*",
+    "@api-sentinel/shared-types": "*",
+    "@api-sentinel/shared-utils": "*",
+    "uuid": "^14.0.0"
+  },
+  "devDependencies": {
+    "@types/uuid": "^10.0.0"
+  }
+}

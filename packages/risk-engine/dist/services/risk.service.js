@@ -25,6 +25,10 @@ class RiskService {
             executiveSummary: this.summaryService.generate(summary, score, rating),
             businessImpact: this.impactService
                 .determine(summary),
+            scanId: crypto.randomUUID(),
+            target: "localhost",
+            generatedAt: new Date()
+                .toISOString(),
         };
     }
 }

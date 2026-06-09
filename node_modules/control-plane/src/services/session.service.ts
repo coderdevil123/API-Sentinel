@@ -69,4 +69,14 @@ export class SessionService {
       data
     );
   }
+
+  getById(
+    scanId: string
+  ) {
+
+    return sessionStore.find(
+      session =>
+        session.scanId === scanId
+    );
+  }
 }

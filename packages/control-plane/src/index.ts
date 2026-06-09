@@ -9,6 +9,9 @@ from "./routes/scan.routes";
 import sessionRoutes
 from "./routes/session.routes";
 
+import reportRoutes
+from "./routes/report.routes";
+
 const app =
   express();
 
@@ -36,6 +39,11 @@ app.use(
 app.use(
   "/api",
   sessionRoutes
+);
+
+app.use(
+  "/api",
+  reportRoutes
 );
 
 const PORT =

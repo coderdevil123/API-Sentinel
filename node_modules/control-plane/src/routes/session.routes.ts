@@ -6,6 +6,14 @@ import {
 }
 from "../services/session.service";
 
+import {
+  SessionController
+}
+from "../controllers/session.controller";
+
+const controller =
+  new SessionController();
+
 const router =
   Router();
 
@@ -20,6 +28,13 @@ router.get(
       service.getAllSessions()
     );
   }
+);
+
+router.get(
+  "/sessions/:id",
+  controller.getSession.bind(
+    controller
+  )
 );
 
 export default router;

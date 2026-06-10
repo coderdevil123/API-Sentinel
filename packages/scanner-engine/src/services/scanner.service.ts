@@ -51,9 +51,6 @@ export class ScannerService {
     private massAssignmentDetector =
     new MassAssignmentDetector();
 
-    private findingManager =
-    new FindingManager();
-
     private reportBuilder =
     new ReportBuilder();
 
@@ -63,6 +60,9 @@ export class ScannerService {
   async scanTarget(
     targetUrl: string
   ): Promise<ScanSummary> {
+
+    const findingManager =
+      new FindingManager();
 
     const findings:
       DetectorResult[] = [];
@@ -82,15 +82,15 @@ export class ScannerService {
         targetUrl
     );
 
-    this.findingManager.add(
+    findings.push(
     authResult
     );
 
-    this.findingManager.add(
+    findingManager.add(
     dataExposureResult
     );
 
-    this.findingManager.add(
+    findingManager.add(
     massAssignmentResult
     );
 
@@ -99,7 +99,7 @@ export class ScannerService {
         targetUrl
       );
 
-    this.findingManager.add(
+    findingManager.add(
         bolaResult
     );
 
@@ -108,7 +108,7 @@ export class ScannerService {
             targetUrl
         );
 
-    this.findingManager.add(
+    findingManager.add(
         sqliResult
     );
 
@@ -117,12 +117,12 @@ export class ScannerService {
             targetUrl
         );
 
-    this.findingManager.add(
+    findingManager.add(
         rateLimitResult
     );
 
     return this.reportBuilder.build(
-        this.findingManager.getAll()
+        findingManager.getAll()
     );
   }
 }

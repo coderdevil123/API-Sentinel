@@ -35,6 +35,11 @@ const items = [
     name: "Settings",
     href: "/settings",
     icon: Settings
+  },
+  {
+    name: "Exports",
+    href: "/export",
+    icon: FileText
   }
 ];
 

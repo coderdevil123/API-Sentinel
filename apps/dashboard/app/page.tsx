@@ -15,6 +15,22 @@ from "@/components/scans/recent-scans-table";
 import FindingsOverview
 from "@/components/dashboard/findings-overview";
 
+import SeverityChart
+from "@/components/analytics/severity-chart";
+
+import RiskTrendChart
+from "@/components/analytics/risk-trend-chart";
+
+import ExecutiveRiskPanel
+from "@/components/dashboard/executive-risk-panel";
+
+import ActivityFeed
+from "@/components/dashboard/activity-feed";
+
+import AutoRefresh
+from "@/components/dashboard/auto-refresh";
+import PlatformHealth from "@/components/dashboard/platform-health";
+
 export default async function HomePage() {
 
   const sessions =
@@ -28,6 +44,7 @@ export default async function HomePage() {
   return (
 
     <DashboardLayout>
+      <AutoRefresh />
 
       <div
         className="
@@ -61,6 +78,8 @@ export default async function HomePage() {
           sessions={sessions}
         />
 
+        <PlatformHealth />
+
         <RecentScansTable
           sessions={sessions}
         />
@@ -68,6 +87,42 @@ export default async function HomePage() {
         <FindingsOverview
           sessions={sessions}
         />
+
+        <div
+          className="
+          grid
+          lg:grid-cols-2
+          gap-6
+          "
+          >
+
+          <SeverityChart
+            sessions={sessions}
+          />
+
+          <RiskTrendChart
+            sessions={sessions}
+          />
+
+        </div>
+
+        <div
+          className="
+          grid
+          lg:grid-cols-2
+          gap-6
+          "
+          >
+
+          <ExecutiveRiskPanel
+            sessions={sessions}
+          />
+
+          <ActivityFeed
+            sessions={sessions}
+          />
+
+        </div>
 
       </div>
 

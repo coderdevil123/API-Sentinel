@@ -15,24 +15,24 @@ class ScannerService {
     authDetector = new auth_detector_1.AuthDetector();
     dataExposureDetector = new data_exposure_detector_1.DataExposureDetector();
     massAssignmentDetector = new mass_assignment_detector_1.MassAssignmentDetector();
-    findingManager = new finding_manager_1.FindingManager();
     reportBuilder = new report_builder_service_1.ReportBuilder();
     rateLimitDetector = new rate_limit_detector_1.RateLimitDetector();
     async scanTarget(targetUrl) {
+        const findingManager = new finding_manager_1.FindingManager();
         const findings = [];
         const authResult = await this.authDetector.scan(targetUrl);
         const dataExposureResult = await this.dataExposureDetector.scan(targetUrl);
         const massAssignmentResult = await this.massAssignmentDetector.scan(targetUrl);
-        this.findingManager.add(authResult);
-        this.findingManager.add(dataExposureResult);
-        this.findingManager.add(massAssignmentResult);
+        findings.push(authResult);
+        findingManager.add(dataExposureResult);
+        findingManager.add(massAssignmentResult);
         const bolaResult = await this.bolaDetector.scan(targetUrl);
-        this.findingManager.add(bolaResult);
+        findingManager.add(bolaResult);
         const sqliResult = await this.sqliDetector.scan(targetUrl);
-        this.findingManager.add(sqliResult);
+        findingManager.add(sqliResult);
         const rateLimitResult = await this.rateLimitDetector.scan(targetUrl);
-        this.findingManager.add(rateLimitResult);
-        return this.reportBuilder.build(this.findingManager.getAll());
+        findingManager.add(rateLimitResult);
+        return this.reportBuilder.build(findingManager.getAll());
     }
 }
 exports.ScannerService = ScannerService;

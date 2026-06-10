@@ -2,6 +2,17 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import {
+  SearchProvider
+}
+from "@/components/dashboard/search-context";
+
+import {
+  FilterProvider
+}
+from "@/components/scans/filter-context";
+import { SortProvider } from "@/components/scans/sort-context";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -27,7 +38,13 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <SearchProvider>
+        <FilterProvider>
+          <SortProvider>
+          <body className="min-h-full flex flex-col">{children}</body>
+          </SortProvider>
+        </FilterProvider>
+      </SearchProvider>
     </html>
   );
 }

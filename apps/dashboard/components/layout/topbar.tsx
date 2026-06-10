@@ -4,6 +4,7 @@ import {
   Bell,
   Search
 } from "lucide-react";
+import GlobalSearch from "../dashboard/global-search";
 
 export default function Topbar() {
 
@@ -30,10 +31,7 @@ export default function Topbar() {
         text-zinc-400
         "
       >
-        <Search size={18} />
-        <span>
-          Search...
-        </span>
+        <GlobalSearch />
       </div>
 
       <div

@@ -1,7 +1,15 @@
+"use client";
+
 import {
   Card,
   CardContent
-} from "@/components/ui/card";
+}
+from "@/components/ui/card";
+
+import {
+  motion
+}
+from "framer-motion";
 
 export default function MetricCard({
   title,
@@ -12,6 +20,16 @@ export default function MetricCard({
 }) {
 
   return (
+
+    <motion.div
+      whileHover={{
+        scale: 1.02
+      }}
+      transition={{
+        duration: 0.2
+      }}
+    >
+
 
     <Card
       className="
@@ -47,5 +65,6 @@ export default function MetricCard({
 
       </CardContent>
     </Card>
+    </motion.div>
   );
 }

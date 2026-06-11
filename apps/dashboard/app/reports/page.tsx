@@ -6,8 +6,7 @@ import {
 }
 from "@/services/api";
 
-import ReportsTable
-from "@/components/reports/reports-table";
+import ReportsTable from "@/components/reports/reports-table";
 
 export default async function ReportsPage() {
 

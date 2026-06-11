@@ -1,3 +1,10 @@
+"use client";
+
+import {
+  motion
+}
+from "framer-motion";
+
 import { Session } from "@/types/session";
 
 export default function ExecutiveRiskPanel({
@@ -14,7 +21,13 @@ export default function ExecutiveRiskPanel({
 
   return (
 
-    <div
+    <motion.div
+      whileHover={{
+        y: -4
+      }}
+      transition={{
+        duration: 0.15
+      }}
       className="
       bg-zinc-950
       border
@@ -84,6 +97,6 @@ export default function ExecutiveRiskPanel({
 
       </div>
 
-    </div>
+    </motion.div>
   );
 }

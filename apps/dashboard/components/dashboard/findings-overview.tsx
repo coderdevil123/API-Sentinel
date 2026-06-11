@@ -1,3 +1,10 @@
+"use client";
+
+import {
+  motion
+}
+from "framer-motion";
+
 import {
   Session
 }
@@ -22,7 +29,13 @@ export default function FindingsOverview({
 
   return (
 
-    <div
+    <motion.div
+      whileHover={{
+        y: -4
+      }}
+      transition={{
+        duration: 0.15
+      }}
       className="
       bg-zinc-950
       border
@@ -51,6 +64,6 @@ export default function FindingsOverview({
         {findings}
       </p>
 
-    </div>
+    </motion.div>
   );
 }

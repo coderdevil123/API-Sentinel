@@ -1,8 +1,21 @@
+"use client";
+
+import {
+  motion
+}
+from "framer-motion";
+
 export default function PlatformHealth() {
 
   return (
 
-    <div
+    <motion.div
+      whileHover={{
+        y: -4
+      }}
+      transition={{
+        duration: 0.15
+      }}
       className="
       bg-zinc-950
       border
@@ -87,6 +100,6 @@ export default function PlatformHealth() {
 
       </div>
 
-    </div>
+    </motion.div>
   );
 }

@@ -31,8 +31,17 @@ import AutoRefresh
 from "@/components/dashboard/auto-refresh";
 import PlatformHealth from "@/components/dashboard/platform-health";
 
+import Protected
+from "@/components/auth/protected";
+
+import {
+  getCurrentUser
+}
+from "@/lib/current-user";
+
 export default async function HomePage() {
 
+  const user = await getCurrentUser();
   const sessions =
   await getSessions();
 
@@ -114,9 +123,19 @@ export default async function HomePage() {
           "
           >
 
-          <ExecutiveRiskPanel
-            sessions={sessions}
-          />
+          <Protected
+            role={user.role}
+            allow={[
+              "ADMIN",
+              "ANALYST"
+            ]}
+          >
+
+            <ExecutiveRiskPanel
+              sessions={sessions}
+            />
+
+          </Protected>
 
           <ActivityFeed
             sessions={sessions}

@@ -1,10 +1,16 @@
-"use client";
+// "use client";
 
 import {
   Bell,
   Search
 } from "lucide-react";
 import GlobalSearch from "../dashboard/global-search";
+
+import UserProfile
+from "@/components/auth/user-profile";
+
+import TopbarClient
+from "./topbar-client";
 
 export default function Topbar() {
 
@@ -31,7 +37,7 @@ export default function Topbar() {
         text-zinc-400
         "
       >
-        <GlobalSearch />
+        <TopbarClient />
       </div>
 
       <div
@@ -46,14 +52,7 @@ export default function Topbar() {
           className="text-zinc-400"
         />
 
-        <div
-          className="
-          w-8
-          h-8
-          rounded-full
-          bg-green-500
-          "
-        />
+        <UserProfile />
       </div>
 
     </header>

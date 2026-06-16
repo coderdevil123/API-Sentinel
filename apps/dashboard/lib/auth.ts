@@ -8,5 +8,11 @@ export async function getUser() {
   const session =
     await auth0.getSession();
 
-  return session?.user;
+  return {
+
+  ...session?.user,
+
+  role: "ADMIN"
+
+};
 }

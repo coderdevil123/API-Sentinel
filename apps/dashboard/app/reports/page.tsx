@@ -6,9 +6,32 @@ import {
 }
 from "@/services/api";
 
+import {
+  getUser
+}
+from "@/lib/auth";
+
+import {
+  redirect
+}
+from "next/navigation";
+
 import ReportsTable from "@/components/reports/reports-table";
 
 export default async function ReportsPage() {
+
+  const user =
+    await getUser();
+
+  if (
+    user?.role !== "ADMIN"
+    &&
+    user?.role !== "ANALYST"
+  ) {
+
+    redirect("/");
+
+  }
 
   const sessions =
     await getSessions();

@@ -59,6 +59,15 @@ export default async function UserProfile() {
           {user.email}
         </p>
 
+        <p
+          className="
+          text-xs
+          text-green-500
+          "
+        >
+          ADMIN
+        </p>
+
       </div>
 
       <LogoutButton />

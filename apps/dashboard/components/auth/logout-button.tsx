@@ -3,7 +3,7 @@ export default function LogoutButton() {
   return (
 
     <a
-      href="/api/auth/logout"
+      href="/auth/logout"
       className="
       px-4
       py-2

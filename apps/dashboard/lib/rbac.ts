@@ -1,14 +1,41 @@
 import {
   UserRole
-}
-from "@/types/user";
+} from "@/types/role";
 
 export function hasRole(
   role: UserRole,
-  allowed: UserRole[]
+  allowedRoles: UserRole[]
 ) {
 
-  return allowed.includes(
+  return allowedRoles.includes(
     role
   );
+
+}
+
+export function canAccessReports(
+  role: UserRole
+) {
+
+  return [
+    "ADMIN",
+    "ANALYST"
+  ].includes(role);
+
+}
+
+export function canExport(
+  role: UserRole
+) {
+
+  return role === "ADMIN";
+
+}
+
+export function canManageUsers(
+  role: UserRole
+) {
+
+  return role === "ADMIN";
+
 }

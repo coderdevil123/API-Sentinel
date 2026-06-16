@@ -3,7 +3,7 @@ export default function LoginButton() {
   return (
 
     <a
-      href="/api/auth/login"
+      href="/auth/login"
       className="
       px-4
       py-2

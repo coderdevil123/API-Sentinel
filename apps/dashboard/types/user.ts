@@ -1,12 +1,18 @@
-export type UserRole =
-  | "ADMIN"
-  | "ANALYST"
-  | "VIEWER";
+import {
+  UserRole
+} from "./role";
 
-export interface AppUser {
+export interface UserContext {
+
   id: string;
+
   email: string;
+
   name: string;
 
+  picture?: string;
+
   role: UserRole;
+
+  organizationId: string;
 }

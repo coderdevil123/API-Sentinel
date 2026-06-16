@@ -1,10 +1,4 @@
-import {
-  AppUser
-}
-from "@/types/user";
-
-export async function getCurrentUser()
-: Promise<AppUser> {
+export async function getCurrentUser() {
 
   return {
 

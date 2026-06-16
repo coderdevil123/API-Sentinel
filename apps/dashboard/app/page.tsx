@@ -38,10 +38,12 @@ import {
   getCurrentUser
 }
 from "@/lib/current-user";
+import { getUserRole } from "@/lib/user-role";
 
 export default async function HomePage() {
 
-  const user = await getCurrentUser();
+  const role =
+  await getUserRole();
   const sessions =
   await getSessions();
 
@@ -124,7 +126,7 @@ export default async function HomePage() {
           >
 
           <Protected
-            role={user.role}
+            role={role}
             allow={[
               "ADMIN",
               "ANALYST"

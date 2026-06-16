@@ -11,7 +11,7 @@ from "@/lib/rbac";
 import {
   UserRole
 }
-from "@/types/user";
+from "@/types/role";
 
 export default function Protected({
   role,

@@ -1,5 +1,8 @@
 // "use client";
 
+import OrganizationBadge
+from "@/components/auth/organization-badge";
+
 import {
   Bell,
   Search
@@ -51,7 +54,7 @@ export default function Topbar() {
           size={18}
           className="text-zinc-400"
         />
-
+         <OrganizationBadge />
         <UserProfile />
       </div>
 

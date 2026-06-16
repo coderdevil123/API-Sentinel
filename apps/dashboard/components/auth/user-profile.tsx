@@ -31,18 +31,21 @@ export default async function UserProfile() {
       "
     >
 
-      <img
-        src={
-          user.picture ||
-          ""
+      {
+          user.picture ? (
+
+            <img
+              src={user.picture}
+              alt="User"
+              className="
+              w-10
+              h-10
+              rounded-full
+              "
+            />
+
+          ) : null
         }
-        alt="User"
-        className="
-        w-10
-        h-10
-        rounded-full
-        "
-      />
 
       <div>
 

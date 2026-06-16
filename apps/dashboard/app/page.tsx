@@ -40,6 +40,12 @@ import {
 from "@/lib/current-user";
 import { getUserRole } from "@/lib/user-role";
 
+import CanAccess
+from "@/components/auth/can-access";
+
+import UserManagementPanel
+from "@/components/admin/user-management-panel";
+
 export default async function HomePage() {
 
   const role =
@@ -139,9 +145,25 @@ export default async function HomePage() {
 
           </Protected>
 
-          <ActivityFeed
-            sessions={sessions}
-          />
+          <CanAccess
+            role={role}
+            permission="USER_MANAGE"
+          >
+
+            <UserManagementPanel />
+
+          </CanAccess>
+
+         <CanAccess
+            role={role}
+            permission="REPORT_READ"
+          >
+
+            <ActivityFeed
+              sessions={sessions}
+            />
+
+          </CanAccess>
 
         </div>
 

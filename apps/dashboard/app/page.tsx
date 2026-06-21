@@ -49,6 +49,9 @@ from "@/components/admin/user-management-panel";
 import OrganizationMembers
 from "@/components/admin/organization-members";
 
+import OrganizationOverview
+from "@/components/organization/organization-overview";
+
 export default async function HomePage() {
 
   const role =
@@ -97,6 +100,8 @@ export default async function HomePage() {
         <MetricsGrid
           sessions={sessions}
         />
+
+        <OrganizationOverview />
 
         <PlatformHealth />
 

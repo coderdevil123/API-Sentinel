@@ -1,3 +1,8 @@
+import {
+  OrganizationSettings
+}
+from "./organization-settings";
+
 export interface Organization {
 
   id: string;
@@ -12,4 +17,6 @@ export interface Organization {
   scansUsed: number;
 
   scanLimit: number;
+
+  settings: OrganizationSettings;
 }

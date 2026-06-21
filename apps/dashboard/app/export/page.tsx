@@ -1,7 +1,29 @@
 import DashboardLayout
 from "@/components/layout/dashboard-layout";
 
-export default function ExportPage() {
+import {
+  redirect
+}
+from "next/navigation";
+
+import {
+  getUserRole
+}
+from "@/lib/user-role";
+
+import {
+  canExport
+}
+from "@/lib/rbac";
+
+export default async function ExportPage() {
+
+  const role =
+    await getUserRole();
+
+  if (!canExport(role)) {
+    redirect("/");
+  }
 
   return (
 

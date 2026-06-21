@@ -24,6 +24,18 @@ getCurrentOrganization()
     scanLimit:
       1000
 
+    settings: {
+
+      allowExports:
+        true,
+
+      allowInvites:
+        true,
+
+      allowApiAccess:
+        true
+
+    }
   };
 
 }

@@ -7,9 +7,11 @@ import DownloadReportButton
 from "./download-report-button";
 
 export default function ReportsTable({
-  sessions
+  sessions,
+  canDownload
 }: {
   sessions: Session[];
+  canDownload: boolean;
 }) {
 
   return (
@@ -80,11 +82,23 @@ export default function ReportsTable({
 
                   <td>
 
-                    <DownloadReportButton
-                      scanId={
-                        session.scanId
-                      }
-                    />
+                    {
+                      canDownload ? (
+                        <DownloadReportButton
+                          scanId={
+                            session.scanId
+                          }
+                        />
+                      ) : (
+                        <span
+                          className="
+                          text-zinc-500
+                          "
+                        >
+                          Restricted
+                        </span>
+                      )
+                    }
 
                   </td>
 

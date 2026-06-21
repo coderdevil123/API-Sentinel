@@ -16,21 +16,32 @@ import {
 }
 from "next/navigation";
 
+import {
+  getUserRole
+}
+from "@/lib/user-role";
+
+import {
+  canAccessReports
+}
+from "@/lib/rbac";
+
+import {
+  canExport
+}
+from "@/lib/rbac";
+
 import ReportsTable from "@/components/reports/reports-table";
 
 export default async function ReportsPage() {
 
-  const user =
-    await getUser();
+  const role =
+  await getUserRole();
 
   if (
-    user?.role !== "ADMIN"
-    &&
-    user?.role !== "ANALYST"
+    !canAccessReports(role)
   ) {
-
     redirect("/");
-
   }
 
   const sessions =
@@ -66,6 +77,9 @@ export default async function ReportsPage() {
 
         <ReportsTable
           sessions={sessions}
+          canDownload={
+            canExport(role)
+          }
         />
 
       </div>

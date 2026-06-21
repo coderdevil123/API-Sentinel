@@ -46,6 +46,9 @@ from "@/components/auth/can-access";
 import UserManagementPanel
 from "@/components/admin/user-management-panel";
 
+import OrganizationMembers
+from "@/components/admin/organization-members";
+
 export default async function HomePage() {
 
   const role =
@@ -151,6 +154,15 @@ export default async function HomePage() {
           >
 
             <UserManagementPanel />
+
+            <CanAccess
+              role={role}
+              permission="USER_MANAGE"
+            >
+
+              <OrganizationMembers />
+
+            </CanAccess>
 
           </CanAccess>
 

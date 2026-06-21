@@ -1,13 +1,5 @@
-export interface
-OrganizationSettings {
-
-  allowExports:
-    boolean;
-
-  allowInvites:
-    boolean;
-
-  allowApiAccess:
-    boolean;
-
+export interface OrganizationSettings {
+  allowExports: boolean;
+  allowInvites: boolean;
+  allowApiAccess: boolean;
 }

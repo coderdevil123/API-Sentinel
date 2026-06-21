@@ -1,5 +1,4 @@
-export interface
-OrganizationStats {
+export interface OrganizationStats {
 
   members:
     number;

@@ -17,4 +17,7 @@ export interface Session {
   riskReport?: any;
 
   report?: any;
+
+  organizationId:
+  string;
 }

@@ -32,6 +32,8 @@ import {
 from "@/lib/rbac";
 
 import ReportsTable from "@/components/reports/reports-table";
+import { filterSessionsByOrganization } from "@/lib/tenant-filter";
+import { getOrganizationSession } from "@/lib/current-organization-session";
 
 export default async function ReportsPage() {
 
@@ -44,8 +46,18 @@ export default async function ReportsPage() {
     redirect("/");
   }
 
+  const organizationSession =
+  await getOrganizationSession();
+
   const sessions =
-    await getSessions();
+  filterSessionsByOrganization(
+
+    await getSessions(),
+
+    organizationSession
+      .organizationId
+
+  );
 
   return (
 

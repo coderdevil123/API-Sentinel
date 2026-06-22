@@ -52,12 +52,35 @@ from "@/components/admin/organization-members";
 import OrganizationOverview
 from "@/components/organization/organization-overview";
 
+import {
+  getOrganizationSession
+}
+from "@/lib/current-organization-session";
+
+import {
+  filterSessionsByOrganization
+}
+from "@/lib/tenant-filter";
+
 export default async function HomePage() {
 
   const role =
   await getUserRole();
   const sessions =
   await getSessions();
+
+  const organizationSession =
+  await getOrganizationSession();
+
+  const tenantSessions =
+  filterSessionsByOrganization(
+
+    sessions,
+
+    organizationSession
+      .organizationId
+
+  );
 
   // console.log(
   //   "SESSIONS:",
@@ -98,7 +121,7 @@ export default async function HomePage() {
         </div>
 
         <MetricsGrid
-          sessions={sessions}
+          sessions={tenantSessions}
         />
 
         <OrganizationOverview />
@@ -106,11 +129,11 @@ export default async function HomePage() {
         <PlatformHealth />
 
         <RecentScansTable
-          sessions={sessions}
+          sessions={tenantSessions}
         />
 
         <FindingsOverview
-          sessions={sessions}
+          sessions={tenantSessions}
         />
 
         <div
@@ -122,11 +145,11 @@ export default async function HomePage() {
           >
 
           <SeverityChart
-            sessions={sessions}
+            sessions={tenantSessions}
           />
 
           <RiskTrendChart
-            sessions={sessions}
+            sessions={tenantSessions}
           />
 
         </div>
@@ -148,7 +171,7 @@ export default async function HomePage() {
           >
 
             <ExecutiveRiskPanel
-              sessions={sessions}
+              sessions={tenantSessions}
             />
 
           </Protected>
@@ -177,7 +200,7 @@ export default async function HomePage() {
           >
 
             <ActivityFeed
-              sessions={sessions}
+              sessions={tenantSessions}
             />
 
           </CanAccess>

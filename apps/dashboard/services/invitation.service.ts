@@ -10,16 +10,51 @@ getInvitations()
   return [
 
     {
+
       id: "1",
 
       email:
-        "futureanalyst@company.com",
+        "newuser@apisentinel.com",
 
       role:
         "ANALYST",
 
+      invitedBy:
+        "Administrator",
+
+      invitedAt:
+        "2026-06-25",
+
       status:
-        "PENDING"
+        "PENDING",
+
+      organizationId:
+        "org_001"
+
+    },
+
+    {
+
+      id: "2",
+
+      email:
+        "viewer@apisentinel.com",
+
+      role:
+        "VIEWER",
+
+      invitedBy:
+        "Administrator",
+
+      invitedAt:
+        "2026-06-20",
+
+      status:
+        "ACCEPTED",
+
+      organizationId:
+        "org_001"
+
     }
 
   ];

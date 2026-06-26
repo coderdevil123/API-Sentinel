@@ -7,7 +7,9 @@ import {
   Shield,
   BarChart3,
   FileText,
-  Settings
+  Settings,
+  Building2,
+  UserPlus
 } from "lucide-react";
 
 const items = [
@@ -40,6 +42,16 @@ const items = [
     name: "Exports",
     href: "/export",
     icon: FileText
+  },
+  {
+    name: "Organization",
+    href: "/organization",
+    icon: Building2
+  },
+  {
+    name:"Invitations",
+    href:"/invitations",
+    icon:UserPlus
   }
 ];
 

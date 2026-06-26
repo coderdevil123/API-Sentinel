@@ -82,6 +82,18 @@ export default async function HomePage() {
 
   );
 
+  // console.log("SESSIONS:", sessions);
+
+  // console.log(
+  //   "ORG:",
+  //   organizationSession.organizationId
+  // );
+
+  // console.log(
+  //   "TENANT:",
+  //   tenantSessions
+  // );
+
   // console.log(
   //   "SESSIONS:",
   //   sessions

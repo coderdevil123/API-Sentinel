@@ -39,6 +39,9 @@ export class ScanService {
       scanId:
         uuid(),
 
+      organizationId:
+        "org-001",
+
       target:
         request.target,
 

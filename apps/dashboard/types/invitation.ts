@@ -11,8 +11,15 @@ export interface Invitation {
 
   role: UserRole;
 
+  invitedBy: string;
+
+  invitedAt: string;
+
   status:
     | "PENDING"
-    | "ACCEPTED";
+    | "ACCEPTED"
+    | "EXPIRED";
+
+  organizationId: string;
 
 }

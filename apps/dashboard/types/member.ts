@@ -5,12 +5,19 @@ from "./role";
 
 export interface Member {
 
-  id: string;
+  id:
+    string;
 
-  email: string;
+  name:
+    string;
 
-  name: string;
+  email:
+    string;
 
-  role: UserRole;
+  role:
+    UserRole;
+
+  joinedAt:
+    string;
 
 }

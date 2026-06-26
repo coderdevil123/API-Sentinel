@@ -2,6 +2,9 @@ export interface ScanSession {
 
   scanId: string;
 
+  organizationId:
+    string;
+
   target: string;
 
   status:

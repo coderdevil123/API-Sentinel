@@ -1,7 +1,7 @@
 import {
   getOrganizationMembers
 }
-from "@/services/organization.service";
+from "@/services/member.service";
 
 export default async function
 OrganizationMembers() {

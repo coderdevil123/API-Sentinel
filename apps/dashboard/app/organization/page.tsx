@@ -19,6 +19,9 @@ import {
 }
 from "@/lib/rbac";
 
+import SubscriptionCard
+from "@/components/organization/subscription-card";
+
 export default async function
 OrganizationPage() {
 
@@ -55,6 +58,8 @@ OrganizationPage() {
         </h1>
 
         <MembersGrid />
+        
+        <SubscriptionCard />
 
       </div>
 

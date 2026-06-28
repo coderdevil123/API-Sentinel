@@ -5,7 +5,10 @@ export interface Subscription {
     | "PRO"
     | "ENTERPRISE";
 
-  active: boolean;
+  expiresAt: string;
 
-  renewalDate: string;
+  seats: number;
+
+  usedSeats: number;
+
 }

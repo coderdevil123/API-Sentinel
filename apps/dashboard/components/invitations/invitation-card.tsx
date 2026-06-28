@@ -56,34 +56,37 @@ InvitationCard({
 
         </h3>
 
-        <p
+        <div
           className="
           text-xs
           text-zinc-500
+          space-y-1
           "
         >
 
-          Invited by
+          <div>
 
-          {" "}
+            Invited by{" "}
 
-          {invitation.invitedBy}
+            {invitation.invitedBy}
 
-          <p>
+          </div>
 
-            Invited
+          <div>
+
+            Invited{" "}
 
             {
 
-            new Date(
-            invitation.invitedAt
-            ).toLocaleDateString()
+              new Date(
+                invitation.invitedAt
+              ).toLocaleDateString()
 
             }
 
-            </p>
+          </div>
 
-        </p>
+        </div>
 
       </div>
 

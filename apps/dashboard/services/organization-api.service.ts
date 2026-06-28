@@ -35,3 +35,23 @@ updateOrganization(
   return true;
 
 }
+
+export async function
+deleteOrganization(
+
+  organizationId:
+    string
+
+){
+
+  console.log(
+
+    "Deleting organization",
+
+    organizationId
+
+  );
+
+  return true;
+
+}

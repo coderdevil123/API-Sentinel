@@ -8,6 +8,10 @@ from "../organization/role-badge";
 
 import InvitationStatus
 from "./invitation-status";
+import { Mail } from "lucide-react";
+
+import InvitationActions
+from "./invitation-actions";
 
 export default function
 InvitationCard({
@@ -31,6 +35,19 @@ InvitationCard({
 
       <div>
 
+        <div
+          className="
+          flex
+          items-center
+          gap-2
+          "
+        >
+          <Mail
+            size={18}
+            className="text-green-500"
+          />
+        </div>
+
         <h3
           className="font-semibold"
         >
@@ -52,12 +69,7 @@ InvitationCard({
 
           {invitation.invitedBy}
 
-          <p
-            className="
-            text-xs
-            text-zinc-500
-            "
-            >
+          <p>
 
             Invited
 
@@ -88,6 +100,49 @@ InvitationCard({
 
         <InvitationStatus
           status={invitation.status}
+        />
+
+        <div
+        className="
+        flex
+        gap-2
+        mt-3
+        "
+        >
+
+          <button
+            className="
+            px-3
+            py-2
+            rounded-lg
+            bg-zinc-800
+            text-sm
+            "
+            >
+
+            Resend
+
+          </button>
+
+          <button
+            className="
+            px-3
+            py-2
+            rounded-lg
+            bg-red-500/20
+            text-red-400
+            text-sm
+            "
+            >
+
+            Cancel
+
+          </button>
+
+        </div>
+
+        <InvitationActions
+          invitation={invitation}
         />
 
       </div>

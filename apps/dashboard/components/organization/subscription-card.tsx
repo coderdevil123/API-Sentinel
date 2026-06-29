@@ -3,6 +3,9 @@ import {
 }
 from "@/services/subscription.service";
 
+import PlanBadge
+from "./plan-badge";
+
 export default async function
 SubscriptionCard(){
 
@@ -33,15 +36,25 @@ SubscriptionCard(){
 
       </h2>
 
-      <p>
+      <div
+          className="
+          flex
+          justify-between
+          items-center
+          "
+        >
 
-        Plan:
+          <p>
 
-        {" "}
+            Current Plan
 
-        {subscription.plan}
+          </p>
 
-      </p>
+          <PlanBadge
+            plan={subscription.plan}
+          />
+
+        </div>
 
       <p>
 
@@ -56,6 +69,38 @@ SubscriptionCard(){
         {subscription.seats}
 
       </p>
+
+      <div
+          className="
+          w-full
+          h-3
+          bg-zinc-800
+          rounded-full
+          overflow-hidden
+          "
+        >
+
+          <div
+            style={{
+
+              width:
+                `${
+                  subscription.usedSeats
+                  /
+                  subscription.seats
+                  *
+                  100
+                }%`
+
+            }}
+
+            className="
+            h-full
+            bg-green-500
+            "
+          />
+
+        </div>
 
       <p>
 

@@ -22,6 +22,18 @@ from "@/lib/rbac";
 import SubscriptionCard
 from "@/components/organization/subscription-card";
 
+import SettingsCard
+from "@/components/organization/settings-card";
+
+import OrganizationIdCard
+from "@/components/organization/organization-id-card";
+
+import AuditLogList
+from "@/components/organization/audit-log-list";
+
+import FeaturesCard
+from "@/components/organization/features-card";
+
 export default async function
 OrganizationPage() {
 
@@ -61,6 +73,13 @@ OrganizationPage() {
         
         <SubscriptionCard />
 
+        <SettingsCard />
+
+        <OrganizationIdCard />
+        
+        <AuditLogList />
+        
+        <FeaturesCard />
       </div>
 
     </DashboardLayout>
